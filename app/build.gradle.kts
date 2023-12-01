@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.vicentcode.viceweath"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.vicentcode.viceweath"
