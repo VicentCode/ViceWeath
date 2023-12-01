@@ -2,4 +2,8 @@
     <string name="app_name">ViceWeath</string>
     <string name="today">Today</string>
     <string name="next_7_days">Next 7 Days</string>
+    <string name="good_morning">Good Morning!</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="chance_of_rain">Chance of rain</string>
 </resources>
