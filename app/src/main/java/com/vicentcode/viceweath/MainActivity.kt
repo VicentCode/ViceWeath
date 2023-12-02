@@ -2,10 +2,12 @@ package com.vicentcode.viceweath
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.BuildConfig
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -33,7 +35,8 @@ class MainActivity : AppCompatActivity() {
 
         requestQueue = Volley.newRequestQueue(this)
 
-        val url = "https://api.weatherapi.com/v1/forecast.json?key=YOUR_APY_KEY&q=24.446693,-104.122912&days=7&lang=en"
+        val apiKey= com.vicentcode.viceweath.BuildConfig.API_KEY
+        val url = "https://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=24.446693,-104.122912&days=7&lang=en"
 
         stringRequest = object : StringRequest(Method.GET, url,
             Response.Listener {
@@ -50,8 +53,7 @@ class MainActivity : AppCompatActivity() {
 
                     Glide.with(this@MainActivity).load("https:${current.getJSONObject("condition").getString
                         ("icon").replace("64x64","128x128")}").into(imWCondition)
-                   // Picasso.get().load("https:${current.getJSONObject("condition").getString("icon")}").into
-                    (imWCondition)
+
                 }
 
                 val currentDateTime = LocalDateTime.now()
@@ -84,9 +86,8 @@ class MainActivity : AppCompatActivity() {
                             val tvTime = findViewById<TextView>(resources.getIdentifier("tvTime${i + 1}", "id", packageName))
                             val imgTime = findViewById<ImageView>(resources.getIdentifier("imgTime${i + 1}", "id", packageName))
 
-                          //Glide.with(this@MainActivity).load("https:${hour.getJSONObject("condition").getString
-                           // ("icon")}").into(imgTime)
-                           Picasso.get().load("https:${hour.getJSONObject("condition").getString("icon")}").into(imgTime)
+                           Picasso.get().load("https:${hour.getJSONObject("condition").getString("icon").replace
+                               ("64x64", "128x128")}").into(imgTime)
 
 
                             tvTime.text = hour.getString("time").substring(11, 16)
@@ -95,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                setClickListeners()
+                setDataWeatherClick()
             }, Response.ErrorListener {
 
             }) {
@@ -111,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         requestQueue.add(stringRequest)
     }
 
-    private fun setClickListeners() {
+    private fun setDataWeatherClick() {
         with(binding) {
             timeCard1.setOnClickListener { showSnackbar(weatherTexts[0]) }
             timeCard2.setOnClickListener { showSnackbar(weatherTexts[1]) }

@@ -14,13 +14,22 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        //get API_KEY from gradle.properties to be accessed from MainActivity.kt
+
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
+
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
 
         }
     }
@@ -35,6 +44,7 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
+        buildConfig = true
     }
 }
 
