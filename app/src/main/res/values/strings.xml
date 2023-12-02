@@ -6,4 +6,16 @@
     <string name="wind">Wind</string>
     <string name="humidity">Humidity</string>
     <string name="chance_of_rain">Chance of rain</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="good_afternoon">Good afternoon!</string>
+    <string name="good_evening">Good evening!</string>
+    <string name="invalid_location">Invalid location</string>
+    <string name="accept">Accept</string>
+    <string name="enter_a_location">Enter a location</string>
+    <string name="cancel">Cancel</string>
+    <string name="errorMessage">it was not possible to load the weather data, please try again later</string>
+    <string name="errorTitle">Something went wrong :(</string>
+    <string name="timeOut">It was not possible to establish a connection, please try again later.</string>
+    <string name="timeoutTitle">Timeout</string>
 </resources>

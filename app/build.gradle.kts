@@ -14,13 +14,22 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        //get API_KEY from gradle.properties to be accessed from MainActivity.kt
+
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
+
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
 
         }
     }
@@ -35,6 +44,7 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -42,6 +52,7 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation("androidx.core:core-ktx:1.9.0")
+    implementation ("com.airbnb.android:lottie:4.1.0")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.squareup.picasso:picasso:2.8")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
