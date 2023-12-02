@@ -8,10 +8,12 @@
     </style>
 
     <style name="cardMiniWeatherTime">
-        <item name="cardBackgroundColor">#FDFDFD</item>
+        <item name="cardBackgroundColor">#FFF</item>
         <item name="cardCornerRadius">10dp</item>
-        <item name="cardElevation">1dp</item>
-        <item name="android:clickable">false</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="backgroundTint">?android:attr/colorControlHighlight</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
     <style name="tvDataMini">
@@ -31,14 +33,14 @@
     <style name="tvDataMiniDark">
         <item name="android:textColor">#000000</item>
         <item name="fontFamily">@font/inter_semibold</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <style name="tvDataNameMiniDark">
         <item name="android:textColor">#424242</item>
         <item name="fontFamily">@font/inter_medium</item>
-        <item name="android:textSize">9sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textAlignment">center</item>
     </style>
 
