@@ -164,8 +164,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
-
-
                 setDataWeatherClick()
 
                 showHideSplash(false)
