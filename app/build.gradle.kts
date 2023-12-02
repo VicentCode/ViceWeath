@@ -52,6 +52,7 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation("androidx.core:core-ktx:1.9.0")
+    implementation ("com.airbnb.android:lottie:4.1.0")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.squareup.picasso:picasso:2.8")
     implementation ("com.github.bumptech.glide:glide:4.15.1")

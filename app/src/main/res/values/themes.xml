@@ -3,6 +3,7 @@
     <style name="Base.Theme.ViceWeath" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#1976D2</item>
     </style>
 
     <style name="Theme.ViceWeath" parent="Base.Theme.ViceWeath" />

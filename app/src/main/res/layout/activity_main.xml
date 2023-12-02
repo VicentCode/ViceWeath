@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32211" />
+        app:layout_constraintGuide_percent="0.42" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -102,11 +102,13 @@
         android:id="@+id/imWCondition"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcome"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@android:drawable/ic_dialog_alert" />
 
@@ -114,7 +116,7 @@
         android:id="@+id/tvTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-8dp"
+        android:layout_marginTop="-50dp"
         android:fontFamily="@font/inter_extrabold"
         android:textAlignment="center"
         android:textColor="#FFF"
@@ -129,6 +131,7 @@
         android:id="@+id/wDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-8dp"
         android:fontFamily="@font/inter_bold"
         android:textAlignment="center"
         android:textColor="#FFF"
@@ -142,10 +145,10 @@
 
 
     <TextView
-        android:id="@+id/wUbi2"
+        android:id="@+id/wMaxMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/inter_semibold"
         android:textAlignment="center"
         android:textColor="#E4E4E4"
@@ -166,7 +169,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/wUbi2">
+        app:layout_constraintTop_toBottomOf="@+id/wMaxMin">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -696,9 +699,13 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ubicationCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="#00000000"
         app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
         app:layout_constraintStart_toStartOf="@+id/tvWelcome"
@@ -739,5 +746,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
