@@ -116,7 +116,7 @@
         android:id="@+id/tvTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="-40dp"
         android:fontFamily="@font/inter_extrabold"
         android:textAlignment="center"
         android:textColor="#FFF"
@@ -384,10 +384,11 @@
 
     <TextView
         android:id="@+id/tvNextD"
+        style="@style/tvNextDaysLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/tvNextDaysLight"
         android:text="@string/next_7_days"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tvToday"
         app:layout_constraintEnd_toEndOf="@+id/imBG"
         app:layout_constraintTop_toTopOf="@+id/tvToday" />

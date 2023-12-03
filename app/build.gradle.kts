@@ -14,8 +14,6 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        //get API_KEY from gradle.properties to be accessed from MainActivity.kt
-
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
